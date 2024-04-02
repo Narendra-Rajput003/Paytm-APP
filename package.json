@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite", 
-    "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm start\" \"npm run server\"",
+    "start": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm run client\" \"npm run server\"",
+    "client": "vite",
+    "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm run client\" \"npm run server\"",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "server": "cd server && npm run dev",
