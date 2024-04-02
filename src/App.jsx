@@ -3,14 +3,14 @@ import {Signin} from "./pages/Signin"
 import {Signup} from "./pages/Signup";
 import {Dashboard} from "./pages/Dashboard";
 import {SendMoney} from "./pages/SendMoney"
-import { Navbar } from "./pages/Navbar";
+import HomePage from "./pages/HomePage";
 function App() {
  
 
   return (
     <>
       <Routes>
-        <Route path="/" element={<Navbar/>}/>
+        <Route path="/" element={<HomePage/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/signin" element={<Signin/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
