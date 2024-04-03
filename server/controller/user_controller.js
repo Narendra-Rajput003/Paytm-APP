@@ -97,3 +97,25 @@ exports.getUsers = async (req, res) => {
         })
     }
 }
+
+
+exports.logout=async(req,res)=>{
+    try {
+        await User.updateOne({_id:req.userId},{
+            $set:{
+                token:""
+            }
+        })
+        return res.status(200).json({
+            success: true,
+            message: "User logged out successfully"
+        })
+        
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            success: false,
+            message: "Internal server error"
+        })
+    }
+}
